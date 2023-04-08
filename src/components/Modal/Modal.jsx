@@ -1,40 +1,33 @@
-import { Component } from 'react';
+import { useEffect } from "react";
 
-export class Modal extends Component {
+useEffect
 
-  state = {
-    isModal: false
-  };
+export const Modal = ({ isModal, hideModal, modalImage }) => {
 
-  constructor(props){
-    super(props);
-    this.escFunction = this.escFunction.bind(this);
-  }
-  escFunction(event){
+  const escFunction = (event) => {
     if (event.key === "Escape") {
 
-      return this.props.hideModal()
+      hideModal()
       //Do whatever when esc is pressed
     }
   }
-  componentDidMount(){
-    document.addEventListener("keydown", this.escFunction, false);
-  }
-  componentWillUnmount(){
-    document.removeEventListener("keydown", this.escFunction, false);
-  }
 
-  render() {
-    const { modalImage, hideModal } = this.props;
+  useEffect(() => {
 
-    return (
-      <div className="Overlay" onClick={hideModal} onKeyDown={this.escFunction}>
-        <img
-          className="Modal-img"
-          src={modalImage}
-          alt="somt"
-        />
-      </div>
-    );
-  }
+    document.addEventListener("keydown", escFunction, false);
+    
+    return () => {
+      document.removeEventListener("keydown", escFunction, false);
+    }
+  }, [])
+
+  return (
+    <div className="Overlay" onClick={hideModal} onKeyDown={escFunction}>
+      <img
+        className="Modal-img"
+        src={modalImage}
+        alt="somt"
+      />
+    </div>
+  );
 }
