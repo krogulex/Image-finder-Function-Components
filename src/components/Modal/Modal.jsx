@@ -6,7 +6,6 @@ export const Modal = ({ isModal, hideModal, modalImage }) => {
     if (event.key === "Escape") {
 
       hideModal()
-      //Do whatever when esc is pressed
     }
   }
 
@@ -17,6 +16,7 @@ export const Modal = ({ isModal, hideModal, modalImage }) => {
     return () => {
       document.removeEventListener("keydown", escFunction, false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

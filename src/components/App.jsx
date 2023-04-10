@@ -27,12 +27,14 @@ export const App = () => {
       setPage(1);
       loadImages();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   useEffect(() => {
     if (page !== 1) {
       loadImages();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const fetchImages = async (search, page) => {
