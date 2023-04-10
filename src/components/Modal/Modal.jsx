@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-useEffect
-
 export const Modal = ({ isModal, hideModal, modalImage }) => {
 
   const escFunction = (event) => {

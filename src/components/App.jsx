@@ -73,11 +73,12 @@ export const App = () => {
   };
 
   const showModal = event => {
-    this.setState({ isModal: true, modalImage: event });
+    setIsModal(true);
+    setModalImage(event)
   };
 
   const hideModal = event => {
-    this.setState({ isModal: false });
+    setIsModal(false);
   };
 
   return (
