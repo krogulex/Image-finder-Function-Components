@@ -8,7 +8,7 @@ import { Modal } from './Modal/Modal';
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
-const per_page = 4;
+const per_page = 12;
 
 export const App = () => {
   const [images, setImages] = useState([]);
