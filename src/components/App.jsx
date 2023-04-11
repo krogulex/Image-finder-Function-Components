@@ -10,6 +10,8 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 const per_page = 12;
 
+//createm context na per page
+
 export const App = () => {
   const [images, setImages] = useState([]);
   const [search, setSearch] = useState('');
