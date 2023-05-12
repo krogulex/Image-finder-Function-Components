@@ -5,7 +5,6 @@ export const SearchBar = ({ onSubmit }) => {
         <button type="Submit" className="Button">
           <span className="Button-label">Search</span>
         </button>
-
         <input
           name="input"
           className="SearchForm-input"
